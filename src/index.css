@@ -1,3 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Manrope', system-ui, sans-serif;
+    @apply h-full scroll-smooth;
+  }
+
+  body {
+    @apply flex min-h-full w-full flex-col items-center text-[15px] font-medium leading-6 text-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply font-bold uppercase leading-normal;
+  }
+
+  h1,
+  .h1 {
+    @apply text-[56px] leading-[58px] tracking-[2px];
+  }
+
+  h2,
+  .h2 {
+    @apply text-[28px] md:text-[40px] leading-[40px] md:leading-[44px] tracking-[1.429px];
+  }
+
+  h3,
+  .h3 {
+    @apply text-[32px] leading-[36px] tracking-[1.143px];
+  }
+
+  h4,
+  .h4 {
+    @apply text-[28px] tracking-[2px];
+  }
+
+  h5,
+  .h5 {
+    @apply text-[24px] tracking-[1.714px];
+  }
+
+  h6,
+  .h6 {
+    @apply text-[15px] lg:text-[18px] tracking-[1.286px] md:tracking-[1.071px] lg:tracking-[1.286px];
+  }
+
+  /* !ring-1 !ring-offset-4 !ring-primaryGray focus:!ring-primaryPeach checked:!ring-primaryPeach */
+  /* [type='radio'] {
+    @apply w-4 h-4 !bg-none !text-primaryPeach focus:!text-primaryPeach checked:!bg-primaryPeach border-[#ccc] checked:hover:bg-primaryPeach checked:!bg-[url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20fill%3D%22none%22%3E%0A%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%225%22%20fill%3D%22%23fff%22%2F%3E%0A%3C%2Fsvg%3E")];
+  } */
+}
+
+@layer components {
+  .text-overline {
+    @apply font-normal text-[14px] tracking-[10px] uppercase;
+  }
+
+  .text-subtitle {
+    @apply font-bold text-[13px] tracking-[0.929] leading-6 uppercase;
+  }
+
+  .btn {
+    @apply h-12 w-40 shrink-0 text-[13px] font-bold tracking-[1px] uppercase transition-all border-[1px];
+  }
+
+  .btn.white {
+    @apply bg-white border-black;
+  }
+
+  .btn.peach {
+    @apply bg-primaryPeach text-white border-primaryPeach;
+  }
+
+  .btn.white:hover {
+    @apply bg-black text-white;
+  }
+
+  .btn.peach:hover {
+    @apply bg-secondaryPeach border-secondaryPeach;
+  }
+}
