@@ -19,7 +19,7 @@ export default function ArrowIcon({ className }: ArrowIconProps) {
           stroke='#D87D4A'
           strokeWidth='2'
           fill='none'
-          fill-rule='evenodd'
+          fillRule='evenodd'
         />
       </svg>
     </>

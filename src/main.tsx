@@ -5,7 +5,7 @@ import App from './App.tsx'
 import './index.css'
 import Home from './pages/Home.tsx'
 import Category from './pages/Category.tsx'
-import ProductDetails from './pages/ProductDetails.tsx'
+import Product from './pages/Product.tsx'
 
 const router = createBrowserRouter([
   {
@@ -15,11 +15,16 @@ const router = createBrowserRouter([
       { element: <Home />, index: true },
       {
         path: 'category',
-        children: [{ path: ':categoryName', element: <Category /> }],
+        children: [
+          {
+            path: ':categoryName',
+            element: <Category />,
+          },
+        ],
       },
       {
-        path: 'productDetails',
-        children: [{ path: ':productId', element: <ProductDetails /> }],
+        path: 'product',
+        children: [{ path: ':productSlug', element: <Product /> }],
       },
     ],
   },

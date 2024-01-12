@@ -14,7 +14,7 @@ export default function Samples() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link to='/products/speakers/6'>
+          <Link to='/product/zx9-speaker'>
             <button className='btn white'>see product</button>
           </Link>
         </div>
@@ -22,7 +22,7 @@ export default function Samples() {
       <div className="rounded-lg col-span-2 h-[320px] bg-[url('./assets/home/mobile/image-speaker-zx7.jpg')] md:bg-[url('./assets/home/tablet/image-speaker-zx7.jpg')] lg:bg-[url('./assets/home/desktop/image-speaker-zx7.jpg')] bg-cover bg-no-repeat bg-center">
         <div className='py-[101px] px-6 md:px-[64px] lg:px-[95px]'>
           <h2 className='h4 mb-8'>ZX7 SPEAKER</h2>
-          <Link to='/products/speakers/5'>
+          <Link to='/product/zx7-speaker'>
             <button className='btn white'>see product</button>
           </Link>
         </div>
@@ -31,7 +31,7 @@ export default function Samples() {
         <div className="md:flex-1 rounded-lg bg-[url('./assets/home/mobile/image-earphones-yx1.jpg')] md:bg-[url('./assets/home/tablet/image-earphones-yx1.jpg')] lg:bg-[url('./assets/home/desktop/image-earphones-yx1.jpg')] bg-cover bg-no-repeat bg-center max-md:min-h-[200px]" />
         <div className='md:flex-1 h-[200px] md:h-[320px] py-[41px] md:py-[101px] px-6 md:px-[41px] md:max-w-[50%] lg:px-[95px] rounded-lg bg-primaryGray'>
           <h2 className='h4 mb-8'>YX1 EARPHONES</h2>
-          <Link to='/products/earphones/1'>
+          <Link to='/product/yx1-earphones'>
             <button className='btn white'>see product</button>
           </Link>
         </div>

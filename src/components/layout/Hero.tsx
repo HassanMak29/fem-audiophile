@@ -5,13 +5,15 @@ export default function Hero() {
   const params = useParams()
   const isHome = Object.keys(params).length === 0
   const isCategory = params.categoryName
+  const isProduct = params.productSlug
 
   return (
     <section
       className={cn(
         'w-full',
         { 'h-[510px] md:h-[633px]': isHome },
-        { 'h-max': isCategory }
+        { 'h-max': isCategory },
+        { hidden: isProduct }
       )}>
       <div
         className={cn(
@@ -38,7 +40,7 @@ export default function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Link to='/products/headphones/4'>
+            <Link to='/product/xx99-mark-two-headphones'>
               <button className='btn peach'>see product</button>
             </Link>
           </div>

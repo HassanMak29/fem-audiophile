@@ -17,7 +17,7 @@ export default function CategoryCard({ img, title }: CategoryCardProps) {
         )}
       />
       <h6 className='max-lg:text-[15px]'>{title}</h6>
-      <Link to={`category/${title}`}>
+      <Link to={`/category/${title}`}>
         <button className='flex items-center gap-2'>
           <span className='uppercase text-[13px] font-bold tracking-[1px] text-black opacity-50 hover:opacity-100 hover:text-primaryPeach transition leading-normal'>
             shop
