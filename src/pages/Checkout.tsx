@@ -139,7 +139,7 @@ export default function Checkout() {
               <p className='h6 text-[18px]'>$ {formatedNumber(shipping)}</p>
             </div>
             <div className='flex justify-between mb-2'>
-              <p className='opacity-50 uppercase'>Vat ((included))</p>
+              <p className='opacity-50 uppercase'>Vat (included)</p>
               <p className='h6 text-[18px]'>$ {formatedNumber(tax)}</p>
             </div>
           </div>

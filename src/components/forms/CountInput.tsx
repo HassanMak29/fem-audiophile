@@ -15,15 +15,6 @@ export default function CountInput({
   decrease,
   className,
 }: CountInputProps) {
-  //   const [count, setCount] = useState(1)
-
-  //   const increase = () => setCount((prev) => prev + 1)
-  //   const decrease = () =>
-  //     setCount((prev) => {
-  //       if (prev > 1) return prev - 1
-  //       return 1
-  //     })
-
   return (
     <div
       className={cn(

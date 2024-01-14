@@ -25,7 +25,7 @@ export default function Product({
     setQuantity((prevQnt) => prevQnt + 1)
   }
   const decrease = () => {
-    setQuantity((prevQnt) => (prevQnt > 1 ? prevQnt - 1 : 0))
+    setQuantity((prevQnt) => (prevQnt > 2 ? prevQnt - 1 : 1))
   }
 
   return (
