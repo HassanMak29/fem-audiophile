@@ -8,7 +8,10 @@ import {
 
 type SetValue<T> = Dispatch<SetStateAction<T>>
 
-const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
+const useLocalStorage = <T>(
+  key: string,
+  initialValue: T
+): [T, SetValue<T>, () => void] => {
   const readValue = useCallback(() => {
     if (typeof window === 'undefined') {
       return initialValue
@@ -44,11 +47,25 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
     }
   }
 
+  const removeValue = () => {
+    if (typeof window === 'undefined') {
+      console.warn(
+        `Tried removing localStorage key “${key}” even though environment is not a client`
+      )
+    }
+
+    try {
+      window.localStorage.removeItem(key)
+    } catch (error) {
+      console.warn(`Error removing localStorage key “${key}”:`, error)
+    }
+  }
+
   useEffect(() => {
     setStoredValue(readValue())
   }, [])
 
-  return [storedValue, setValue]
+  return [storedValue, setValue, removeValue]
 }
 
 export default useLocalStorage

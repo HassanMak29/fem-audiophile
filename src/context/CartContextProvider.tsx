@@ -4,10 +4,9 @@ import { TCartItem, TProduct } from '../lib/types'
 import useLocalStorage from '../hooks/useLocalStorage'
 
 export default function ContextProvider({ children }: PropsWithChildren) {
-  const [storedCart, setStoredCart] = useLocalStorage<TCartItem[]>(
-    'audiophile-cart',
-    []
-  )
+  const [storedCart, setStoredCart, removeStoredCart] = useLocalStorage<
+    TCartItem[]
+  >('audiophile-cart', [])
   const [cart, setCart] = useState<TCartItem[]>(storedCart)
 
   const addProduct = (product: TProduct, quantity: number = 1) => {
@@ -55,7 +54,10 @@ export default function ContextProvider({ children }: PropsWithChildren) {
       }
     })
 
-  const removeAll = () => setCart([])
+  const removeAll = () => {
+    removeStoredCart()
+    setCart([])
+  }
 
   const value = { cart, addProduct, removeProduct, removeAll }
 
