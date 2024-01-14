@@ -1,19 +1,21 @@
+import { forwardRef } from 'react'
 import { cn } from '../../lib/utils'
 
 interface HamburgerMenuIconProps {
   className?: string
-  onClick: () => void
+  onClick: any
 }
-export default function HamburgerMenuIcon({
-  className,
-  onClick,
-}: HamburgerMenuIconProps) {
+export default forwardRef(function HamburgerMenuIcon(
+  { className, onClick }: HamburgerMenuIconProps,
+  ref: React.ForwardedRef<SVGSVGElement | null>
+) {
   return (
     <svg
+      ref={ref}
       width='16'
       height='15'
       xmlns='http://www.w3.org/2000/svg'
-      className={cn('group cursor-pointer', className)}
+      className={cn('group cursor-pointer z-40', className)}
       onClick={onClick}>
       <g
         fill='#FFF'
@@ -25,4 +27,4 @@ export default function HamburgerMenuIcon({
       </g>
     </svg>
   )
-}
+})

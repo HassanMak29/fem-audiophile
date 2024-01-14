@@ -71,7 +71,7 @@
   }
 
   .text-subtitle {
-    @apply font-bold text-[13px] tracking-[0.929] leading-6 uppercase;
+    @apply font-bold text-[13px] tracking-[0.929] leading-6 uppercase text-primaryPeach;
   }
 
   .btn {

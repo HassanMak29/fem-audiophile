@@ -1,3 +1,6 @@
+import { z } from 'zod'
+import { CheckoutSchema } from './schemas'
+
 export type TImage = {
   mobile: string
   tablet: string
@@ -32,3 +35,10 @@ export type TProduct = {
 }
 
 export type TData = TProduct[]
+
+export type TCartItem = {
+  product: TProduct
+  quantity: number
+}
+
+export type TCheckoutSchema = z.infer<typeof CheckoutSchema>

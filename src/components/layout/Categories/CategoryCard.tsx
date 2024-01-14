@@ -5,9 +5,10 @@ import ArrowIcon from '../../icons/ArrowIcon'
 interface CategoryCardProps {
   img: string
   title: string
+  close?: () => void
 }
 
-export default function CategoryCard({ img, title }: CategoryCardProps) {
+export default function CategoryCard({ img, title, close }: CategoryCardProps) {
   return (
     <div className='max-md:w-[327px] md:flex-1 h-[165px] lg:h-[204px] rounded-lg bg-primaryGray relative pt-[88px] lg:pt-[116px] flex items-center flex-col lg:gap-[15px] gap-[17px]'>
       <div
@@ -17,7 +18,7 @@ export default function CategoryCard({ img, title }: CategoryCardProps) {
         )}
       />
       <h6 className='max-lg:text-[15px]'>{title}</h6>
-      <Link to={`/category/${title}`}>
+      <Link to={`/category/${title}`} onClick={close}>
         <button className='flex items-center gap-2'>
           <span className='uppercase text-[13px] font-bold tracking-[1px] text-black opacity-50 hover:opacity-100 hover:text-primaryPeach transition leading-normal'>
             shop

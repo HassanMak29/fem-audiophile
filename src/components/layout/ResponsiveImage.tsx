@@ -1,4 +1,4 @@
-import { TImage } from '../../types'
+import { TImage } from '../../lib/types'
 
 interface ResponsiveImageProps {
   image: TImage

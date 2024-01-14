@@ -1,15 +1,7 @@
 import { useRef, useState } from 'react'
 import CartIcon from '../../../icons/CartIcon'
 import CartModal from './CartModal'
-
-function Overlay({ clickHandler }: { clickHandler: () => void }) {
-  return (
-    <div
-      className='absolute bottom-0 left-0 right-0 top-[94px] h-screen bg-black opacity-20'
-      onClick={clickHandler}
-    />
-  )
-}
+import { Overlay } from '../../Overlay'
 
 export default function Cart() {
   const iconRef = useRef<SVGSVGElement | null>(null)

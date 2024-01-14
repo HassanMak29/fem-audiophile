@@ -1,9 +1,11 @@
 // import data from '../../../assets/data.json'
 import { Link } from 'react-router-dom'
 import { cn } from '../../../lib/utils'
-import { TProduct } from '../../../types'
+import { TProduct } from '../../../lib/types'
 import CountInput from '../../forms/CountInput'
 import ResponsiveImage from '../ResponsiveImage'
+import { useCart } from '../../../context/useCart'
+import { useState } from 'react'
 
 interface ProductProps {
   product: TProduct
@@ -16,6 +18,16 @@ export default function Product({
   index,
   isCategoryProduct,
 }: ProductProps) {
+  const { addProduct } = useCart()
+  const [quantity, setQuantity] = useState(1)
+
+  const increase = () => {
+    setQuantity((prevQnt) => prevQnt + 1)
+  }
+  const decrease = () => {
+    setQuantity((prevQnt) => (prevQnt > 1 ? prevQnt - 1 : 0))
+  }
+
   return (
     <div
       className={cn(
@@ -64,8 +76,16 @@ export default function Product({
           <div className='flex flex-col gap-12'>
             <div>$ {product.price}</div>
             <div className='flex gap-4'>
-              <CountInput count={1} increase={() => {}} decrease={() => {}} />
-              <button className='btn peach'>add to cart</button>
+              <CountInput
+                count={quantity}
+                increase={increase}
+                decrease={decrease}
+              />
+              <button
+                className='btn peach'
+                onClick={() => addProduct(product, quantity)}>
+                add to cart
+              </button>
             </div>
           </div>
         )}

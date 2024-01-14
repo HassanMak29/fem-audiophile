@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import data from '../../../assets/data.json'
-import { TProduct } from '../../../types'
+import { TProduct } from '../../../lib/types'
 import ResponsiveImage from '../ResponsiveImage'
 import Product from './Product'
 
@@ -9,13 +9,21 @@ interface ProductDetailsProps {
 }
 
 export default function ProductDetails({ productSlug }: ProductDetailsProps) {
+  const navigate = useNavigate()
   const product = data.find((p: TProduct) => p.slug === productSlug)
-  console.log(data)
+
   if (!product) return
 
   return (
     <section className='w-full flex flex-col gap-40'>
-      <Product key={product.name} product={product} index={0} />
+      <div>
+        <div
+          onClick={() => navigate(-1)}
+          className='mb-6 lg:mb-14 capitalize -mt-24 opacity-50 cursor-pointer'>
+          Go back
+        </div>
+        <Product key={product.name} product={product} index={0} />
+      </div>
 
       <div className='flex max-lg:flex-col gap-[125px]'>
         <div className='flex flex-col gap-8 max-w-[635px]'>

@@ -1,11 +1,13 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { cn } from '../../lib/utils'
 
 export default function Hero() {
+  const { pathname } = useLocation()
   const params = useParams()
-  const isHome = Object.keys(params).length === 0
-  const isCategory = params.categoryName
-  const isProduct = params.productSlug
+  const isHome = pathname === '/'
+  const isCategory = pathname.includes('/category')
+  const isProduct = pathname.includes('/product')
+  const isCheckout = pathname.includes('/checkout')
 
   return (
     <section
@@ -13,7 +15,7 @@ export default function Hero() {
         'w-full',
         { 'h-[510px] md:h-[633px]': isHome },
         { 'h-max': isCategory },
-        { hidden: isProduct }
+        { hidden: isProduct || isCheckout }
       )}>
       <div
         className={cn(

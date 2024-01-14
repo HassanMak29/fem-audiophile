@@ -17,7 +17,7 @@ export default forwardRef(function CartIcon(
       height='20'
       xmlns='http://www.w3.org/2000/svg'
       className={cn(
-        'fill-white hover:fill-primaryPeach transition cursor-pointer',
+        'fill-white hover:fill-primaryPeach transition cursor-pointer z-40',
         className
       )}
       onClick={onClick}>
