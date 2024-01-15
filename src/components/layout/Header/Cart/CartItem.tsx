@@ -1,6 +1,6 @@
 import { useCart } from '../../../../context/useCart'
 import { TCartItem } from '../../../../lib/types'
-import { formatedNumber } from '../../../../lib/utils'
+import { cn, formatedNumber } from '../../../../lib/utils'
 import CountInput from '../../../forms/CountInput'
 
 interface CartItemProps {
@@ -13,7 +13,8 @@ export default function CartItem({ cartItem, isCheckout }: CartItemProps) {
 
   if (!cartItem) return
   return (
-    <div className='flex justify-between'>
+    <div
+      className={cn('flex justify-between', { 'items-center': !isCheckout })}>
       <div className='flex gap-4'>
         <img
           src={cartItem.product.image.mobile.replace('.', '')}
