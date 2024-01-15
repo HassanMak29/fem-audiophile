@@ -120,7 +120,7 @@ export default function Checkout() {
           {cart.length > 0 ? (
             <div className='flex flex-col gap-6 mb-8'>
               {cart.map((item) => (
-                <CartItem cartItem={item} />
+                <CartItem key={item.product.id} cartItem={item} isCheckout />
               ))}
             </div>
           ) : (

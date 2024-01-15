@@ -10,17 +10,20 @@ export default function ContextProvider({ children }: PropsWithChildren) {
   const [cart, setCart] = useState<TCartItem[]>(storedCart)
 
   const addProduct = (product: TProduct, quantity: number = 1) => {
+    console.log('clicked')
+
     setCart((prevCartItems) => {
+      console.log('prevCartItems: ', prevCartItems)
       if (prevCartItems.some((crtItem) => crtItem.product.id === product.id)) {
         const updatedCart = prevCartItems.map((crtItem) =>
           crtItem.product.id === product.id
             ? {
                 product: crtItem.product,
-                quantity: crtItem.quantity++,
+                quantity: crtItem.quantity + 1,
               }
             : crtItem
         )
-
+        console.log('updatedCart', updatedCart)
         setStoredCart(updatedCart)
         return updatedCart
       } else {
