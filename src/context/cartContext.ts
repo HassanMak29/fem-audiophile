@@ -10,7 +10,7 @@ interface IContext {
 
 export default createContext<IContext>({
   cart: [],
-  addProduct: (v: TProduct, q: number = 1) => {},
-  removeProduct: (v: TProduct) => {},
+  addProduct: (_v: TProduct, _q: number = 1) => {},
+  removeProduct: (_v: TProduct) => {},
   removeAll: () => {},
 })

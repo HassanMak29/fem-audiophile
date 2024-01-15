@@ -26,10 +26,10 @@ export const CheckoutSchema = z.object({
   'payment-method': z.string(),
   'e-money-number': z
     .string()
-    .min(9, 'e-Money Number must contain 9 characters')
-    .max(9, 'e-Money Number must contain 9 characters'),
+    .min(9, 'Number must contain 9 characters')
+    .max(9, 'Number must contain 9 characters'),
   'e-money-pin': z
     .string()
-    .min(4, 'e-Money Pin must contain 4 characters')
-    .max(4, 'e-Money Pin must contain 4 characters'),
+    .min(4, 'Pin must contain 4 characters')
+    .max(4, 'Pin must contain 4 characters'),
 })
